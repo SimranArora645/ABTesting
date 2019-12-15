@@ -1,0 +1,18 @@
+---
+:id: 23584081
+:submitters:
+- :name: Simran Arora
+  :email: simran_arora@brown.edu
+- :name: 0e70c
+  :email: rujapa_thepumnoeysuk@brown.edu
+- :name: Li, James
+  :email: james_li@brown.edu
+- :name: Corinne Johnston
+  :email: corinne_johnston@brown.edu
+:created_at: !ruby/object:ActiveSupport::TimeWithZone
+  utc: 2019-10-31 02:49:29.399198000 Z
+  zone: !ruby/object:ActiveSupport::TimeZone
+    name: America/Los_Angeles
+  time: 2019-10-30 19:49:29.399198000 Z
+:status: processed
+:score: 19.0

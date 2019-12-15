@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+      var timerStart = Date.now();
+      console.log('Page Load:' + timerStart)
+      var uniq_session = timerStart;
+
+      var cookie = getCookie('uid');
+
+      var uniq_session = cookie;
+
+      if(cookie == '' || cookie == null) {
+        var uid = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 12);
+        console.log('uid:' + uid)
+        setCookie('uid', uid,  40)
+        cookie = getCookie('uid');
+        uniq_session = cookie;
+      }
+      function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+      }
+
+      console.log('version B: cookie:' + cookie)
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Memphis Taxis</title>
+  <link href="../static/indexB.css" rel="stylesheet" />
+  <link href='//fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <div class="header"> 
+      <div class="bar">
+        <i class="fa fa-bars" style="font-size:300%"></i>
+        <div class="search">Search <i class="fa fa-search" style="font-size: 100%"></i></div> 
+      </div>
+      <div class="title">
+          Memphis Taxis
+      </div>
+      <div class="meta">
+        This page contains information about taxi and cab companies in Memphis, Tennessee. Not endorsed by any of the companies listed, or the city of Memphis.
+      </div>
+      <div class="icontitle">
+        <i class="fa fa-taxi" style="color: black"></i>
+        <i class="fa fa-taxi" style="color: white"></i>
+        <i class="fa fa-taxi" style="color: black"></i>
+        <i class="fa fa-taxi" style="color: white"></i>
+        <i class="fa fa-taxi" style="color: black"></i>
+      </div>
+     
+    </div>
+
+    <div class="ser">
+        Our services<i class="fa fa-handshake-o" style="font-size:120%"></i> 
+    </div>
+
+
+    <div class="content">
+      
+      <div class="box1">
+        <div class="container">
+            <span class="name">YellowCab Taxi</span>
+            <div class="icon">Y</div>
+            <div class="det">Safe, Reliable Taxi Services from Yellow Cab and Checker Cab are available
+                in the Memphis Metro area 24 hours a day.</div>
+            <button class="reserve" type="submit" id="mp1">Reserve</button>
+           
+        </div>
+      </div>
+      <div class="box2">
+        <div class="container">
+            <span class="name">RideCharge Taxi</span>
+            <div class="icon">R</div>   
+            <div class="det">Our drivers are the most professional drivers in the industry. Our drivers
+                are licensed and required to successfully complete a formal training.</div>
+            <button class="reserve" type="submit" id="mp2">Reserve</button>
+            
+        </div>
+      </div>
+      <div class="box3">
+        <div class="container">
+            <span class="name">Memphis Uber</span>
+            <div class="icon">U</div>
+            <div class="det">We are so much cheaper than taxis..!</div>
+            <button class="reserve" type="submit" id="mp3">Reserve</button>
+        </div>       
+      </div>
+      <div class="box4">
+        <div class="container">
+            <span class="name">Premier Taxi</span>
+            <div class="icon">P</div>
+            <div class="det">Our goal is to efficiently
+                transport our passengers in a safe, polite and timely manner at a fair
+                price.</div>
+            <button class="reserve" type="submit" id="mp4">Reserve</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+      var timeLoaded = Date.now()
+        $(document).ready(function() {
+          timeLoaded =  Date.now();
+          console.log('Page Load:' + timeLoaded)
+          sendData(timeLoaded, 0.0, 0.0, uniq_session)
+        });
+
+      $("#mp1").on("click", function(d) {
+            // Retrieve the object from storage
+            var clickTime = Date.now()
+            var clickObjectID = 'mp1'
+            console.log('Click Time:' + clickTime)
+            sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
+            // TODO: Feel free to make this point to different site
+            window.location.href = "http://www.yellowcabofmemphis.com/"
+
+      })
+
+
+      $("#mp2").on("click", function(d) {
+            // Retrieve the object from storage
+            var clickTime = Date.now()
+            var clickObjectID = 'mp2'
+            console.log('Click Time:' + clickTime)
+            sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
+            // TODO: Feel free to make this point to different site
+            window.location.href = "https://www.ridecharge.com/s/tn-memphis/taxi-sedan-limo-shuttle"
+      })
+
+        $("#mp3").on("click", function(d) {
+            // Retrieve the object from storage
+            var clickTime = Date.now()
+            var clickObjectID = 'mp3'
+            console.log('Click Time:' + clickTime)
+            sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
+            // TODO: Feel free to make this point to different site
+            window.location.href = "https://www.uber.com/cities/memphis/"
+      })
+
+          $("#mp4").on("click", function(d) {
+            // Retrieve the object from storage
+            var clickTime = Date.now()
+            var clickObjectID = 'mp4'
+            console.log('Click Time:' + clickTime)
+            sendData(timeLoaded, clickTime, clickObjectID, uniq_session)
+            // TODO: Feel free to make this point to different site
+            window.location.href = "https://premierofmemphis.com/contact-us/"
+      })
+
+
+      function sendData(timeLoaded, clickTime, clickObjectID, cook){
+            var dataObj = { 'version': 'B', 'pageLoadTime': timeLoaded , 'clickTime': clickTime , 'HtmlElementID': clickObjectID, 'UniqueSession' :uniq_session};
+            console.log(JSON.stringify(dataObj))
+             $.ajax({
+                 type: 'POST',
+                  url: '/data',
+                  async: false,
+                  dataType: 'json',
+                  contentType: 'application/json; charset=utf-8',
+                  data: JSON.stringify(dataObj),
+                  success: function(callback) {
+                      console.log(callback);
+                  },
+                  error: function() {
+                      $(this).html("error!");
+                  }
+            });
+      }
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+
+body{
+    font-family: 'Vollkorn', Georgia, Times, serif;
+    margin: 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header header header header header'
+      'ser ser ser ser ser ser ser ser ser ser'
+      'content content content content content content content content content content';
+    grid-template-rows: 1fr 0.1fr 1fr;
+  }
+
+.ser{
+    grid-area: ser;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-size: 200%;
+    padding: 7%;
+    padding-left: 11%;
+    padding-top: 5%;
+    padding-bottom: 0px;
+}
+
+.fa.fa-handshake-o{
+    margin-left: 3%;
+}
+
+.bar{
+    margin-bottom: 3%;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.fa.fa-search{
+    margin-left: 70%;
+}
+
+.search{
+    margin-left: 6%;
+    margin-right: 2%;
+    font-size: 120%;
+    background-color: white;
+    padding: 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+    border-radius: 10px;
+    width: 30%;
+}
+
+
+.header {
+    background-color: #FFE066;
+    padding: 7%;
+    padding-left: 15%;
+    padding-top: 5%;
+    grid-area: header;
+    padding-bottom: 5%;
+
+    -webkit-clip-path: polygon(0 0, 0 50%, 100% 100%, 100% 100%, 100% 0);
+    clip-path: polygon(
+        0% 0%,     /* top left */
+        0% 0%,     /* top left */
+        70% 0%,    /* top right */
+        100% 30%,   /* top right */
+        100% 50%,  /* bottom right */
+        100% 100%,  /* bottom right */
+        30% 100%,   /* bottom left */
+        0 70%      /* bottom left */);
+}
+
+.title{
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-size: 350%;
+    line-height: 100%;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating{
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 35%); }
+    to   { transform: translate(0, -0px); } 
+}
+
+.meta{
+    margin: 2%;
+    max-width: 65%;
+    font-size: 120%;
+    line-height: 170%;
+    margin-left: 0%;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+.fa.fa-taxi{
+    margin-left: 3%;
+    font-size: 450%;
+}
+
+.icontitle{
+    margin-left: 0%;
+    margin-bottom: 0.2%;
+    margin-right: 15%;
+    min-width: 100%;
+    animation-name: floating;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    padding: 4%;
+    grid-area: content;
+    display: grid;
+    grid-template-areas:
+      'box1 box1 box1 box1 box1 box2 box2 box2 box2 box2'
+      'box3 box3 box3 box3 box3 box4 box4 box4 box4 box4';
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.box1{
+    grid-area: box1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box2{
+    grid-area: box2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box3{
+    grid-area: box3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box4{
+    grid-area: box4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #B4E1FF;
+    margin: 1%;
+    padding: 4.5%;
+    width: 60%;
+    height: 70%;
+    box-shadow: 5px 5px 3px #ccc;
+    border-radius: 7px;
+    display: grid;
+    grid-template-areas:
+      'name name name name name'
+      'icon icon icon icon icon'
+      'none none none none reserve';
+    grid-template-rows: 0.4fr 1fr 0.2fr;
+    grid-template-columns: repeat(5, 1fr);  
+}
+
+.name{
+    grid-area: name;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-size: 120%;
+    line-height: 100%;
+    margin-top: 1.5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+    align-items: center;
+}
+
+.icon{
+    grid-area: icon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 400%;
+    color: white;
+    font-weight: bold;
+}
+
+.reserve{
+    grid-area: reserve;
+    text-decoration: underline;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 100%;
+}
+
+.reserve:hover{
+    color: black;
+}
+
+.det{
+    display: none; 
+    width: 250px;
+    font-size: 90%;
+    margin-left: 4%;
+
+}
+
+.container:hover .det{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container:hover .icon{
+    display: none;
+}

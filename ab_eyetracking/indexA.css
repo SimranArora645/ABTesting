@@ -1,0 +1,76 @@
+header {
+	background-color: #FFE066;
+	padding: 2%;
+	display: flex;
+	justify-content: flex-start;
+}
+/* Feel free to modify anything in this file.*/
+
+.body {
+	background-color: #FFFF99;
+}
+
+.vendor-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 2em;
+	margin-top: 2%;
+	padding-bottom: 4%;
+	border-bottom: dashed 6px #FFE066;
+	border-bottom-width: 10px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom:2%;
+
+}
+
+.vendor-photo {
+	max-width: 200px;
+	max-height: 150px;
+	padding: 2%;
+	background-color: #FFE066;
+}
+
+.vendor-book-button {
+	font-size: 2em;
+	background-color: #ffdd00;
+	color: white;
+	font-weight: 1000;
+	box-shadow: 5px 5px 3px rgb(128, 125, 125);
+}
+
+.vendor-book-button:hover{
+	background-color: #ffc40c;
+}
+
+.title {
+	font-size: 3em;
+	font-family: 'Varela Round', sans-serif;
+	margin: 1%;
+	color: white;
+	font-weight: 1000;
+	text-align: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.subtitle {
+  font-size: 130%;
+  font-family: 'Varela Round', sans-serif;
+  color: black;
+  display: flex;
+  justify-content: flex-start;
+  margin: 1%;
+}
+
+.cap{
+	font-size: 70%;
+	text-decoration: none;
+}
